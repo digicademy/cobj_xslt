@@ -1,0 +1,32 @@
+{
+    "name": "adwlm/cobj_xslt",
+    "type": "typo3-cms-extension",
+    "description": "Extends TYPO3 with a new content object XSLT for flexible XML transformations",
+    "homepage": "http://www.digitale-akademie.de",
+    "authors": [
+        {
+          "name": "Torsten Schrade",
+          "email": "Torsten.Schrade@adwmainz.de",
+          "role": "Developer",
+          "homepage": "http://www.adwmainz.de"
+        }
+    ],
+    "license": ["GPL-2.0+"],
+    "keywords": ["TYPO3", "XML", "XSLT", "Digital Humanities"],
+    "support": {
+        "issues": "https://github.com/digicademy/cobj_xslt/issues"
+    },
+    "version": "1.7.0",
+    "require": {
+        "typo3/cms-core": ">=6.2.0 || <=7.6.99"
+    },
+    "replace": {
+        "cobj_xslt": "self.version",
+        "typo3-ter/cobj_xslt": "self.version"
+    },
+    "autoload": {
+        "psr-4": {
+          "ADWLM\\CobjXslt\\": "Classes/"
+        }
+    }
+}
