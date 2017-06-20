@@ -1,4 +1,10 @@
-# Please also check the activity view at http://forge.typo3.org/projects/extension-cobj_xslt/activity?show_changesets=1
+1.8.0
+=====
+* Version compatibility set to 7.6.0-8.7.99
+* Drop old class migrations
+* Small folder and file refactorings
+* PSR compliance
+* Bring documentation up to date
 
 1.7.0
 =====
@@ -35,5 +41,4 @@
 
 1.0.0
 =====
-
 * First public version. Manual included.

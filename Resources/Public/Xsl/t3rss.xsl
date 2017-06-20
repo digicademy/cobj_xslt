@@ -32,17 +32,6 @@
             <span class="date">[<xsl:value-of select="php:functionString('strftime', '%d.%m.%Y' ,php:functionString('strtotime', pubDate))"/>]</span>
         </p>
         
-        <!-- collect categories into one paragraph and separate them with commas -->
-        <p>
-            Tags: 
-            <xsl:for-each select=".//category">
-                <span><xsl:value-of select="."/></span>
-                <xsl:if test="position() != last()">
-                    <xsl:text>, </xsl:text>
-                </xsl:if>
-            </xsl:for-each>
-        </p>
-        
         <p><xsl:value-of select="description"/></p>
         
         <!-- hand link generation over to TypoScript -->

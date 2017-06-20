@@ -9,8 +9,7 @@
 Reference
 ---------
 
-This section gives an overview on all TypoScript properties of the XSLT content object. 
-You can also have a look into the README.txt file within the doc folder to get a configuration example.
+This section gives an overview on all TypoScript properties of the XSLT content object.
 
 .. container:: table-row
 
@@ -364,3 +363,51 @@ You can also have a look into the README.txt file within the doc folder to get a
             }
 
          Executed on the final result of all transformations just before the content is returned.
+
+Next is an example for all TS configuration options with their according data types
+
+::
+
+   my.object = XSLT
+   my.object {
+
+      source = [URL / PATH / STRING / stdWrap]
+
+      transformations {
+
+         1 {
+               stylesheet = [URL / PATH / STRING / stdWrap]
+
+               transformToURI = [PATH]
+
+               registerPHPFunctions = [BOOLEAN / ARRAY]
+               registerPHPFunctions {
+                  10 = [object name :: function name]
+               }
+
+               setParameters {
+                  parametername {
+                     namespace = [STRING]
+                     value =  [STRING / stdWrap]
+                  }
+               }
+
+               removeParameters {
+                  parametername {
+                     namespace = [STRING]
+                  }
+               }
+
+               setProfiling = [BOOLEAN]
+
+               stdWrap = [stdWrap to result of this transformation]
+         }
+
+         2 {
+               [...]
+         }
+      }
+
+      stdWrap [stdWrap to the whole object]
+   }
+
