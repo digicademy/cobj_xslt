@@ -9,57 +9,132 @@
 <xslt> TypoTag
 ^^^^^^^^^^^^^^
 
+.. important::
+
+   Currently there exists a small core bug in TYPO3 7.6 and above that
+   prevents the functionality described in this tutorial from working. Until this is
+   resolved in the core your will have to patch your TYPO3 source by hand to get
+   the described functionality. Older versions of TYPO3 are not affected by the bug.
+   `Read more... <https://forge.typo3.org/issues/81624>`_
+
 From a developers point of view using the XSLT content object in a
 TypoScript template or in a FLUIDTEMPLATE is perfectly fine. But
-imagine you have some power users that work with XML and XSLT and want
-to upload and transform their stuff themselves. How could the cObject
-be made “reusable” and accessible for editors? Writing a small
-extension comes to mind immediately. Or maybe introducing a new
-content element. In this tutorial, we will look at another possibility
-that is quite flexible and convenient: a <xslt> TypoTag. It will look
-like this:
+imagine you have some power users that work with XML/XSLT and want
+to upload and transform stuff themselves. In this tutorial,
+we will look how to do this with an <xslt> TypoTag. The obvious advantage of a
+TypoTag in comparison to the other approaches is that it can be used everywhere
+in the system. You could also use it in a news record or an address element for example.
 
-.. figure:: ../../Images/manual_html_78e304d8.png
+.. attention::
 
-This is the source when the RTE is disabled:
+   TYPO3 7.6 and 8.7 use different default rich text editors (rtehtmlarea and ckeditor).
+   The configuration therefore depends on your TYPO3 version and the RTE you use. The
+   tutorial will first discuss the general setup of the TypoTag and then show the
+   respective configurations for the two RTEs.
+
+Configuration for a simple input field (TYPO3 7.6 and 8.7)
+----------------------------------------------------------
+
+The configuration for a simple input field without RTE works the same for both TYPO3 versions
+and is also the basis for the integration of the TypoTag into the respective RTE.
+
+The XSLT TypoTag works similar to a <link> TypoTag and will look like this:
 
 ::
 
-   <xslt stylesheet="collection.xsl">fileadmin/xslt/collection.xml</xslt>
+     <xslt stylesheet="collection.xsl">fileadmin/xslt/collection.xml</xslt>
 
-Optionally for our editors we could provide a userElement:
+To make it work, the content of the field should be treated by a parseFunc. If you output the field
+with Fluid you would simply send the content through.
+
+::
+
+   <f:format.html>
+      {data.myField}
+   </f:format.html>
+
+If you treat the field output with TypoScript only, send the content through
+
+::
+
+   my.field.stdWrap.parseFunc < lib.parseFunc
+
+The approaches shown here use the standard lib.parseFunc that should be modified like this:
+
+::
+
+   # allow the new TypoTag in both versions of the standard parseFunc
+   lib.parseFunc {
+     allowTags := addToList(xslt)
+   }
+
+   lib.parseFunc_RTE {
+     allowTags := addToList(xslt)
+   }
+
+   # define the TypoTag
+   lib.parseFunc.tags.xslt = XSLT
+   lib.parseFunc.tags.xslt {
+
+     breakoutTypoTagContent = 1
+     stripNL = 1
+
+     source.data = current : 1
+
+     transformations.1 {
+       stylesheet.dataWrap = fileadmin/xslt/|{parameters : stylesheet}
+       setProfiling = 1
+     }
+   }
+
+   # add it to the RTE version of parseFunc
+   lib.parseFunc_RTE.tags.xslt < lib.parseFunc.tags.xslt
+
+First we add the <xslt> tag to the allowTags lists of both parsing
+libraries. Then we configure the tag. Notice that its
+important to set the breakoutTypoTagContent property, otherwise you
+will have <p>s wrapped around your result. Another thing to remember
+is that it is possible to get the attribute values of custom tags with
+getText from the $cobj->parameters array. Because the stylesheet
+property has stdWrap capabilites we can use a dataWrap to set a basic
+path to the XSL stylesheets and just let the users enter the needed
+stylesheet. And that's it. Now you have a fully fledged XSLT object at
+your editor's fingertips.
+
+Note: Of course you can define your own parseFunc. Simply don't forget to send your
+field content through it.
+
+Configuration for rtehtmlarea (TYPO3 7.6)
+-----------------------------------------
+
+In rtehtmlarea the custom tag will look like this:
+
+.. figure:: ../../Images/manual_html_78e304d8.png
+
+A user simply writes the path to the XML file that should be processed into the
+RTE field. The <xslt> tag an then be wrapped around with a user element:
 
 .. figure:: ../../Images/manual_html_60d7b4cd.png
 
-The obvious advantage of a TypoTag in comparison to the other
-approaches is that it can be used everywhere in the system. You could
-also use it in a news record or an address element. Only an input
-field is needed that is treated with the good old
-lib.parseFunc/lib.parseFunc\_RTE. Let's configure the RTE with
-PageTSConfig for our XSLT custom tag:
+This is the PageTSconfig:
 
 ::
 
    RTE.default {
-   
+
            showButtons := addToList(user)
            hideButtons := removeFromList(user)
-   
+
            userElements {
-                   747 = XML Functions
+                   747 = XML Transformations
                    747 {
-                           10 = XPATH
-                           10.description = Executes a XPath query
+                           10 = XSLT
+                           10.description = Executes a XSL transformation
                            10.mode = wrap
-                           10.content = <xpath>|</xpath>
-                           
-                           20 = XSLT
-                           20.description = Executes a XSLT transformation
-                           20.mode = wrap
-                           20.content = <xslt>|</xslt>
+                           10.content = <xslt stylesheet="collection.xsl">|</xslt>
                    }
            }
-   
+
            proc {
                    allowTagsOutside := addToList(xslt)
                    allowTags := addToList(xslt)
@@ -70,53 +145,16 @@ PageTSConfig for our XSLT custom tag:
            }
    }
 
-We add the custom <xslt> tag to the various allowedTag lists in the
-default configuration of the RTE. This makes it possible to enter the
-tag directly without switching off the editor. The configuration of a
-XML section in the userElements is optional and included here just for
-completeness. Notice: If you use this, you will have to implement the
-parsing of the custom tag slightly different than shown below, because
-its not possible to set tag attributes in the userElements dialogue.
+Notice: Its not possible to set attributes with a user element. Therefore you will
+have to set a fixed XSL stylesheet for each <xslt> user element you define.
 
-Next we need to configure lib.parseFunc and lib.parseFunc\_RTE for FE
-rendering of our tag:
+Configuration for ckeditor (TYPO3 8.7)
+--------------------------------------
 
-::
+Coming soon...
 
-   lib.parseFunc {
-     allowTags := addToList(xslt)
-   }
-   
-   lib.parseFunc_RTE {
-     allowTags := addToList(xslt)
-   }
-   
-   lib.parseFunc.tags.xslt = XSLT
-   lib.parseFunc.tags.xslt {
-   
-     breakoutTypoTagContent = 1
-     stripNL = 1
-   
-     source.data = current : 1
-   
-     transformations.1 {
-       stylesheet.dataWrap = fileadmin/xslt/|{parameters : stylesheet}
-       setProfiling = 1
-     }
-   }
-   
-   lib.parseFunc_RTE.tags.xslt < lib.parseFunc.tags.xslt
-
-First we added the <xslt> tag to the allowTags lists of both parsing
-libraries. Then we configured the tag itself. Notice that its
-important to set the breakoutTypoTagContent property, otherwise you
-will have <p>s wrapped around your result. Another thing to remember
-is that it is possible to get the attribute values of custom tags with
-getText from the $cobj->parameters array. Because the stylesheet
-property has stdWrap capabilites we can use a dataWrap to set a basic
-path to the XSL stylesheets and just let the users enter the needed
-stylesheet. And that's it. Now you have a fully fledged XSLT object at
-your editor's fingertips.
+And a bit of CSS
+----------------
 
 All that is left is to improve the display of the tag in the RTE like
 in the screenshot above. This is of course optional. For the example

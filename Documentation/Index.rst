@@ -18,7 +18,7 @@ XSLT Content Object
 		cobj_xslt
 
 	:Version:
-		1.7.0
+		1.8.0
 
 	:Language:
 		en
@@ -30,7 +30,7 @@ XSLT Content Object
 		forEditors, forAdmins, forBeginners, forIntermediates
 
 	:Copyright:
-		2015
+		2017
 
 	:Author:
 		Torsten Schrade

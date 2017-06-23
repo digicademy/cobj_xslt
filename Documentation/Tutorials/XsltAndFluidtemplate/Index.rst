@@ -16,11 +16,11 @@ flexible. But what about the Extbase/Fluid way of doing things? It
 might be that you want to handle or transform XML data in your
 FLUIDTEMPLATEs for example...
 
-Of course, this can always be achieved by using Fluid's cObject view
+This can always be achieved by using Fluid's cObject view
 helper to invoke a TypoScript XSLT content object. From version 1.2.0
-of cobj\_xslt it is even easier. This version ships a special
-<xslt:transform> view helper for your convenience. So let's try the
-first tutorial again, but this time the “Fluid way”.
+of cobj\_xslt it is even easier. The newer versions of cobj_xslt ship with
+a special <xslt:transform> view helper. So let's try the
+first tutorial again, but this time with Fluid.
 
 First we set up a basic FLUIDTEMPLATE:
 
@@ -37,16 +37,17 @@ namespace:
 
    {namespace xslt=ADWLM\CobjXslt\ViewHelpers}
 
-We can now call the view helper with <xslt:transform>. It just takes
-two attributes: “source” and “transformations”. Within “source” you
+We can now call the view helper with <xslt:transform>. It takes
+two required attributes: "source" and "transformations". Within "source" you
 can set a path to a XML resource. If you don't set this, the view
-helper takes the content of the tag as XML source. “Transformations”
+helper takes the content of the tag as XML source. "Transformations"
 in turn expects an array of configurations with array keys in
 concordance with the property names of the XSLT cObj. Example Fluid
 code:
 
 ::
 
+   <f:format.raw>
    <xslt:transform transformations="{0: {stylesheet: 'fileadmin/xslt/collection.xsl'}">
            <collection>
                    <cd>
@@ -61,12 +62,18 @@ code:
                    </cd>
            </collection>
    </xslt:transform>
+   </f:format.raw>
 
 As you can see we pass on a numbered array that reflects the number of
 transformations we would like the data to go through. Just as in
 TypoScript, the second level of this array is associative. The keys
-reflect the according TypoScript properties. Notice: You can only use
-the following four properties in the view helper:
+reflect the according TypoScript properties.
+
+   .. attention::
+
+      From TYPO3 version 8.7 onwards you must wrap the view helper output in <f:format.raw> tags.
+
+You can only use the above five properties in the XSLT view helper.
 
 +----------------------+---------------------------------------------------------------+
 | property             | description                                                   |
@@ -86,11 +93,13 @@ the following four properties in the view helper:
 +----------------------+---------------------------------------------------------------+
 
 The above code produces precisely the same result as in the first
-tutorial. Just to show you how you could have solved the second
-tutorial about the RSS feed in pure Fluid:
+tutorial. Next is a Fluid solution to how you could have solved the second
+tutorial about the RSS feed:
 
 ::
 
-   <xslt:transform source="http://news.typo3.org/rss.xml" transformations="{0: {stylesheet: 'fileadmin/xslt/rss.xsl', registerPHPFunctions: 1, setProfiling: 1}, 1: {stylesheet: 'fileadmin/xslt/rm.namespaces.xsl', setProfiling: 1}}" />
+   <f:format.raw>
+      <xslt:transform source="http://news.typo3.org/rss.xml" transformations="{0: {stylesheet: 'fileadmin/xslt/rss.xsl', registerPHPFunctions: 1, setProfiling: 1}, 1: {stylesheet: 'fileadmin/xslt/rm.namespaces.xsl', setProfiling: 1}}" />
+   </f:format.raw>
 
 That's it. Enjoy!

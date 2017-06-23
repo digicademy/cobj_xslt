@@ -20,7 +20,7 @@ This section gives an overview on all TypoScript properties of the XSLT content 
          string\/stdWrap
 
    Description
-         This fetches the XML data from a source. Can be a XML string, a field
+         This fetches the XML data from a source. Can be an XML string, a field
          in the database containing XML, a file (path or via TypoScript FILE
          cObject) or an external resource.
 
@@ -106,10 +106,10 @@ This section gives an overview on all TypoScript properties of the XSLT content 
 
             transformations.1 {
                stylesheet (
-            <xsl:stylesheet version="1.0" 
-            xmlns:xsl="http://www.w3.org/1999/XSL/Transform"      
+            <xsl:stylesheet version="1.0"
+            xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
             <xsl:output method="html" encoding="utf8" indent="yes"/>
-            <xsl:template match="item">             
+            <xsl:template match="item">
             <p><xsl:value-of select="description"/></p>
             </xsl:template>
             </xsl:stylesheet>
@@ -172,8 +172,8 @@ This section gives an overview on all TypoScript properties of the XSLT content 
          boolean
 
    Description
-         If [i].transformToURI is used and the result should only be written to 
-         the file, you can use this property to completely suppress the return 
+         If [i].transformToURI is used and the result should only be written to
+         the file, you can use this property to completely suppress the return
          of the transformation.
 
          **Example:** ::
@@ -327,6 +327,11 @@ This section gives an overview on all TypoScript properties of the XSLT content 
          This activates profiling for the current stylesheet. The profiling
          information is written to the TSFE admin panel.
 
+         .. important::
+
+            Due to a small bug in TYPO3 8.7 and above the display of TS log messages (and therefore the profiling information)
+            can not be directly activated in the admin panel but must be set from TSConfig with the property
+            admPanel.tsdebug.displayMessages = 1. `Read more... <https://forge.typo3.org/issues/81609>`_
 
 .. container:: table-row
 

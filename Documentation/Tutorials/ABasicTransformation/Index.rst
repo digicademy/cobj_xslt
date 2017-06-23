@@ -57,7 +57,7 @@ Next, we need to load the XSL styles that will perform the
 transformation. The XSLT object gives you the possibility to define a
 transformation 'pipeline', each with it's own configuration and
 stylesheet through which the XML data gets send. Transformations are
-configured below the  **transformation.** Property. We proceed:
+configured below the  **transformation.** property. We proceed:
 
 ::
 
@@ -103,7 +103,7 @@ And here is the output:
 
 .. figure:: ../../Images/manual_html_670467ff.png
 
-Nice. But wait... what's that “default” thingy doing within the <h1>?
+Nice. But wait... what's that “default” thing doing in the <h1>?
 When we check the stylesheet, we see that the plan seems to have been
 to set the content of the <h1> dynamically using a <xsl:param>. We
 will fill in the title of the current TYPO3 page. For this, we simply

@@ -25,9 +25,9 @@ Features
 
 - Works with database fields, files or external XML & XSL resources
 
-- XML can be 'piped' through several XSL transformations
+- XML can be 'piped' through multiple XSL transformations
 
-- Register PHP functions for use within your XSL stylesheets
+- Register PHP functions for use in your XSL stylesheets
 
 - Call cObjects in your XSL stylesheets using 'typoscriptObjectPath'
 
@@ -40,7 +40,7 @@ Features
 Other interesting use cases
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Many more ideas spring to mind where you could make use of the XSLT
+Many more ideas come to mind where you could make use of the XSLT
 object. Here are some:
 
 Transform flexform content. Might come in handy if you use
@@ -51,6 +51,10 @@ any other XML based content format.
 
 Access and display XML content provided over REST APIs on your TYPO3
 website.
+
+Display lists of publications based on XML exports from citation managers
+on your website (as has been done in `this nice example
+<https://www.rhrk.uni-kl.de/internetdienste/wwwdienste/webauftritt/citavi-import-howto/>`_)
 
 Use it together with the `XPATH content object
 <http://typo3.org/extensions/repository/view/cobj-xpath>`_ to select
@@ -65,6 +69,6 @@ And much more...
 Credits
 ^^^^^^^
 
-This extension has been developed within the context of the `Digital Humanities
+This TYPO3 extension has been developed within the context of the `Digital Humanities
 <http://www.digitale-akademie.de/projekte/matrix.html>`_ projects
 of the `Digital Academy Mainz <http://www.digitale-akademie.de/>`_.

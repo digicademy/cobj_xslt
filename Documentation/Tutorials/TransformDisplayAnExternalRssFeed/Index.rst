@@ -10,14 +10,13 @@ Transform & display an external RSS feed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Its a quite common task to display content from an external XML feed.
-There are many good extensions in TER that cater for this need. When
-you just want to retrieve, transform and display a feed the XSLT
-content object can step in as a powerful TypoScript solution.
+There are many good extensions in TER for this. The XSLT
+content object can also step up to this as a pure TypoScript solution.
 
 This tutorial will also show you how you can set parameters from
-TypoScript for use in the XSL stylesheet or pass values from the XSL
+TypoScript for use in your XSL stylesheet or pass values from the XSL
 stylesheet to TypoScript objects. On top of that there will be a
-little demonstration what stuff you can achieve by setting up a XSLT
+little demonstration of what stuff you can achieve by setting up an XSLT
 pipeline. But let's check the newsfeed from
 http://news.typo3.org/rss.xml first.
 
@@ -204,7 +203,7 @@ Result:
 
 .. figure:: ../../Images/manual_html_m1efc09cf.png
 
-You can find the full XSL stylesheet of this tutorial in the res
+You can find the full XSL stylesheet of this tutorial in the Resources/Public/Xsl
 folder of the extension. One last thing: You may notice that all tags
 generated during this transformation still carry the php namespace due
 to our declaration in the stylesheet root. This could be suppressed
