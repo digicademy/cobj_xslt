@@ -2,9 +2,9 @@
 =====
 * Version compatibility set to 7.6.0-8.7.99
 * Drop old class migrations
-* Small folder and file refactorings
-* PSR compliance
-* Bring documentation up to date
+* PSR refactoring and code compliance
+* Update manual
+* CKEditor plugin for <xslt> TypoTag in TYPO3 8.7+
 
 1.7.0
 =====

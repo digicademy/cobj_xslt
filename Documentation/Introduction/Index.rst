@@ -40,29 +40,24 @@ Features
 Other interesting use cases
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Many more ideas come to mind where you could make use of the XSLT
+Many ideas come to mind where you could make use of the XSLT
 object. Here are some:
 
-Transform flexform content. Might come in handy if you use
-`Templavoila
-<http://typo3.org/extensions/repository/view/templavoila/current/>`_ ,
-`FLUX <http://typo3.org/extensions/repository/view/flux/current/>`_ or
-any other XML based content format.
+- Transform flexform content. Might come in handy if you use `Templavoila <http://typo3.org/extensions/repository/view/templavoila/current/>`_ , `FLUX <http://typo3.org/extensions/repository/view/flux/current/>`_ or
+  any other XML based content format.
 
-Access and display XML content provided over REST APIs on your TYPO3
-website.
+- Access and display XML content provided over REST APIs on your TYPO3
+  website.
 
-Display lists of publications based on XML exports from citation managers
-on your website (as has been done in `this nice example
-<https://www.rhrk.uni-kl.de/internetdienste/wwwdienste/webauftritt/citavi-import-howto/>`_)
+- Display lists of publications based on XML exports from citation managers
+  on your website (as has been done in `this nice example
+  <https://www.rhrk.uni-kl.de/internetdienste/wwwdienste/webauftritt/citavi-import-howto/>`_)
 
-Use it together with the `XPATH content object
-<http://typo3.org/extensions/repository/view/cobj-xpath>`_ to select
-and then transform chunks of XML structures.
+- Use it together with the `XPATH content object <http://typo3.org/extensions/repository/view/cobj-xpath>`_
+  to select and then transform chunks of XML structures.
 
-Store your TYPO3 content as XML files, for example by defining another
-pagetype that outputs XML which is then written to disk with the XSLTs
-transformToURI property.
+- Store your TYPO3 content as XML files, for example by defining another pagetype that outputs
+  XML which is then written to disk with the XSLTs transformToURI property.
 
 And much more...
 

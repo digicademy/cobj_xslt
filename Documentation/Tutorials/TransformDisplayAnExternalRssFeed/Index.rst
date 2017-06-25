@@ -60,23 +60,23 @@ Our stylesheet starts out with:
    <xsl:stylesheet version="1.0"
      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
      xmlns:php="http://php.net/xsl">
-     
+
      <!-- set output format -->
      <xsl:output method="html" encoding="utf8" indent="yes"/>
-     
+
      <!-- suppress any non matched text/atts -->
      <xsl:template match="text()|@*"/>
-   
+
      <!-- root node -->
      <xsl:template match="/">
        <xsl:apply-templates />
      </xsl:template>
-   
+
      <!-- processing of news items -->
      <xsl:template match="item">
        <xsl:copy-of select="." />
      </xsl:template>
-   
+
    </xsl:stylesheet>
 
 Basically, all the XSL does is to suppress any non-matched text and
@@ -154,7 +154,7 @@ Now we're up for <category> collection. This is also a XSL classic:
 .. code-block:: xslt
 
    <p>
-           Tags: 
+           Tags:
            <xsl:for-each select=".//category">
                    <span><xsl:value-of select="."/></span>
                    <xsl:if test="position() != last()">
@@ -220,20 +220,20 @@ such jobs. This is how it is configured:
 
    page.10 = XSLT
    page.10 {
-     
+
      source = http://news.typo3.org/rss.xml
-     
+
      transformations.1 {
-       
-       stylesheet = fileadmin/t3rss.xsl    
+
+       stylesheet = fileadmin/t3rss.xsl
        registerPHPFunctions = 1
        stdWrap.wrap = <div id="t3rss">|</div>
      }
-     
+
      transformations.2 {
        stylesheet = fileadmin/Remove-Namespaces.xsl
      }
-   
+
    }
 
 Finished. Now everything is nice and clean.

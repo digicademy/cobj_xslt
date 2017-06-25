@@ -12,6 +12,18 @@ ChangeLog
 +----------------+---------------------------------------------------------------+
 | Version        | Changes                                                       |
 +================+===============================================================+
+| 1.8.0          | - Version compatibility set to 7.6.0-8.7.99                   |
+|                |                                                               |
+|                | - Usage of old standalone classname "cobj_xslt" via migration |
+|                |   is now removed; please use the namespaced version of the    |
+|                |   class from now on                                           |
+|                |                                                               |
+|                | - CKEditor plugin for <xslt> TypoTag in TYPO3 8.7+            |
+|                |                                                               |
+|                | - Update manual                                               |
+|                |                                                               |
+|                | - PSR refactoring and code compliance                         |
++----------------+---------------------------------------------------------------+
 | 1.7.0          | - Version compatibility set to 6.2.0-7.9.99                   |
 |                |                                                               |
 |                | - Namespace and class refactoring                             |
