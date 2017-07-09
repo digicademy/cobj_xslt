@@ -11,11 +11,9 @@
 
 .. important::
 
-   Currently there is a core bug in TYPO3 version 7.6 and higher that
-   prevents the TypoTag functionality described in this tutorial from working. Until the issue is
-   resolved in the core your will have to patch your TYPO3 source manually.
-   Older versions of TYPO3 are not affected by the bug.
-   `You can read more and get the patch right here... <https://forge.typo3.org/issues/81624>`_
+   TYPO3 versions lower than 7.6.20 and 8.7.3 contain a bug that prevents the functionality
+   described in this tutorial from working. Please make sure you use the above versions (or higher)
+   if you want to implement the TypoTag functionality.
 
 From a developers point of view using the XSLT content object in a
 TypoScript template or in a FLUIDTEMPLATE is perfectly fine. But
