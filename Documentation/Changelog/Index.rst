@@ -17,7 +17,11 @@ ChangeLog
 |                | - **Important:** Extension namespace switched from            |
 |                |   adwlm/cobj_xslt to digicademy/cobj_xslt. Please adapt your  |
 |                |   Fluid templates to the new namespace.                       |
-|                |   Example: {namespace xslt=Digicademy\CobjXslt\ViewHelpers}   |
+|                |   Example: {namespace xslt=Digicademy\\CobjXslt\\ViewHelpers}.|
+|                |   A compatibility layer is in place that will be removed in   |
+|                |   TYPO3 LTS version 10                                        |
+|                |                                                               |
+|                | - Refactoring TransformViewHelper for TYPO3 v9                |
 |                |                                                               |
 |                | - Update manual                                               |
 +----------------+---------------------------------------------------------------+

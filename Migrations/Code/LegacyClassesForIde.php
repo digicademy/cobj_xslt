@@ -5,7 +5,7 @@ namespace {
 
 namespace ADWLM\CobjXslt\ContentObject {
     /**
-     * @deprecated since v1.9.0, will be removed in v1.10.0
+     * @deprecated since TYPO3 v9, will be removed in TYPO3 v10
      */
     class XsltContentObject extends \Digicademy\CobjXslt\ContentObject\XsltContentObject
     {
@@ -14,7 +14,7 @@ namespace ADWLM\CobjXslt\ContentObject {
 
 namespace ADWLM\CobjXslt\ViewHelpers {
     /**
-     * @deprecated since v1.9.0, will be removed in v1.10.0
+     * @deprecated since TYPO3 v9, will be removed in TYPO3 v10
      */
     class TransformViewHelper extends \Digicademy\CobjXslt\ViewHelpers\TransformViewHelper
     {
