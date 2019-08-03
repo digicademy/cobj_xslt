@@ -1,3 +1,11 @@
+1.9.0
+=====
+* Version compatibility set to 8.7.0-9.5.99
+* Extension namespace switched from adwlm/cobj_xslt to digicademy/cobj_xslt
+* Add deprecation layer for namespace switch
+* Refactor TransformViewHelper vor TYPO3 v9
+* Update manual
+
 1.8.0
 =====
 * Version compatibility set to 7.6.0-8.7.99
