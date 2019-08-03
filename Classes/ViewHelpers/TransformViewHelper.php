@@ -1,18 +1,18 @@
 <?php
 
-namespace ADWLM\CobjXslt\ViewHelpers;
+namespace Digicademy\CobjXslt\ViewHelpers;
 
 /***************************************************************
  *  Copyright notice
  *
- *  Copyright (c) 2017 Torsten Schrade <Torsten.Schrade@adwmainz.de>
+ *  Torsten Schrade <Torsten.Schrade@adwmainz.de>, Academy of Sciences and Literature | Mainz
  *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
  *  free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
+ *  the Free Software Foundation; either version 3 of the License, or
  *  (at your option) any later version.
  *
  *  The GNU General Public License can be found at
@@ -64,17 +64,26 @@ class TransformViewHelper extends AbstractViewHelper
     }
 
     /**
+     * Initialize ViewHelper arguments
+     */
+    public function initializeArguments()
+    {
+        parent::initializeArguments();
+        $this->registerArgument('source', 'null', 'source', false, null);
+        $this->registerArgument('transformations', 'array', 'transformations', false, []);
+    }
+
+    /**
      * Fluid view helper wrapper for the XSLT content object. Calls the content object class directly.
-     *
-     * @param mixed $source
-     * @param array $transformations
      *
      * @return mixed
      */
-    public function render($source = null, $transformations = array())
+    public function render()
     {
 
         $content = '';
+        $source = $this->arguments['source'];
+        $transformations = $this->arguments['transformations'];
 
         if ($source === null) {
             $source = $this->renderChildren();

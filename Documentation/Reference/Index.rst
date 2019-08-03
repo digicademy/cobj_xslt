@@ -236,7 +236,7 @@ This section gives an overview on all TypoScript properties of the XSLT content 
             transformations.1 {
                 registerPHPFunctions = 1
                 registerPHPFunctions {
-                   1 = \ADWLM\CobjXslt\ContentObject\XsltContentObject::typoscriptObjectPath
+                   1 = \Digicademy\CobjXslt\ContentObject\XsltContentObject::typoscriptObjectPath
                 }
             }
 
@@ -244,7 +244,7 @@ This section gives an overview on all TypoScript properties of the XSLT content 
 
          .. code-block:: xslt
 
-            <xsl:value-of select="php:functionString('\ADWLM\CobjXslt\ContentObject\XsltContentObject::typoscriptObjectPath', 'lib.my.cObject', title)"/>
+            <xsl:value-of select="php:functionString('\Digicademy\CobjXslt\ContentObject\XsltContentObject::typoscriptObjectPath', 'lib.my.cObject', title)"/>
 
          This will submit the matches found by the stylesheet to lib.my.cObject
          for further processing.
@@ -326,12 +326,6 @@ This section gives an overview on all TypoScript properties of the XSLT content 
    Description
          This activates profiling for the current stylesheet. The profiling
          information is written to the TSFE admin panel.
-
-         .. important::
-
-            Due to a small bug in TYPO3 8.7 and above the display of TS log messages (and therefore the profiling information)
-            can not be directly activated in the admin panel but must be set from TSConfig with the property
-            admPanel.tsdebug.displayMessages = 1. `Read more... <https://forge.typo3.org/issues/81609>`_
 
 .. container:: table-row
 

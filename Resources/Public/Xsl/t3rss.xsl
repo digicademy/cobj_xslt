@@ -35,7 +35,7 @@
         <p><xsl:value-of select="description"/></p>
         
         <!-- hand link generation over to TypoScript -->
-        <xsl:value-of select="php:functionString('\ADWLM\CobjXslt\ContentObject\XsltContentObject::typoscriptObjectPath', 'lib.link', link)" disable-output-escaping="yes"/>
+        <xsl:value-of select="php:functionString('\Digicademy\CobjXslt\ContentObject\XsltContentObject::typoscriptObjectPath', 'lib.link', link)" disable-output-escaping="yes"/>
             
         </div>
         

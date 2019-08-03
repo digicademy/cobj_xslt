@@ -12,7 +12,18 @@ ChangeLog
 +----------------+---------------------------------------------------------------+
 | Version        | Changes                                                       |
 +================+===============================================================+
-| 1.8.0          | - Version compatibility set to 7.6.0-8.7.99                   |
+| 1.9.0          | - TYPO3 compatibility: 8.7.0-9.5.99                           |
+|                |                                                               |
+|                | - **Important:** Extension namespace switched from            |
+|                |   adwlm/cobj_xslt to digicademy/cobj_xslt. Please adapt your  |
+|                |   Fluid templates to the new namespace.                       |
+|                |   Example: {namespace xslt=Digicademy\CobjXslt\ViewHelpers}   |
+|                |                                                               |
+|                | - Update manual                                               |
++----------------+---------------------------------------------------------------+
+| 1.8.0          | - This version was only released on GitHub                    |
+|                |                                                               |
+|                | - TYPO3 compatibility: 7.6.0-8.7.99                           |
 |                |                                                               |
 |                | - Usage of old standalone classname "cobj_xslt" via migration |
 |                |   is now removed; please use the namespaced version of the    |
@@ -24,17 +35,17 @@ ChangeLog
 |                |                                                               |
 |                | - PSR refactoring and code compliance                         |
 +----------------+---------------------------------------------------------------+
-| 1.7.0          | - Version compatibility set to 6.2.0-7.9.99                   |
+| 1.7.0          | - TYPO3 compatibility: 6.2.0-7.9.99                           |
 |                |                                                               |
 |                | - Namespace and class refactoring                             |
 +----------------+---------------------------------------------------------------+
-| 1.6.0          | - Version compatibility set to 4.5.0-6.2.99                   |
+| 1.6.0          | - TYPO3 compatibility: 4.5.0-6.2.99                           |
 |                |                                                               |
 |                | - Set extension version to be in line with cobj_xpath again   |
 |                |                                                               |
 |                | - Minor modifications in manual                               |
 +----------------+---------------------------------------------------------------+
-| 1.3.0          | - Version compatibility set to 4.5.0-6.1.99                   |
+| 1.3.0          | - TYPO3 compatibility: 4.5.0-6.1.99                           |
 |                |                                                               |
 |                | - ReST based manual                                           |
 |                |                                                               |

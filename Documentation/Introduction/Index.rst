@@ -43,8 +43,7 @@ Other interesting use cases
 Many ideas come to mind where you could make use of the XSLT
 object. Here are some:
 
-- Transform flexform content. Might come in handy if you use `Templavoila <http://typo3.org/extensions/repository/view/templavoila/current/>`_ , `FLUX <http://typo3.org/extensions/repository/view/flux/current/>`_ or
-  any other XML based content format.
+- Transform flexform content.
 
 - Access and display XML content provided over REST APIs on your TYPO3
   website.
@@ -64,6 +63,11 @@ And much more...
 Credits
 ^^^^^^^
 
-This TYPO3 extension has been developed within the context of the `Digital Humanities
-<http://www.digitale-akademie.de/projekte/matrix.html>`_ projects
-of the `Digital Academy Mainz <http://www.digitale-akademie.de/>`_.
+This extension is developed by the `Digital Academy <http://www.adwmainz.de/digitalitaet/digitale-akademie.html>`_
+of the `Academy of Sciences and Literature | Mainz <http://www.adwmainz.de>`_.
+
+Join development
+^^^^^^^^^^^^^^^^
+
+Development takes place on `Github <https://github.com/digicademy/cobj_xslt>`_.
+You are very welcome to join and submit pull requests.

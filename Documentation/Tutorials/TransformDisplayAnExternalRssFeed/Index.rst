@@ -180,7 +180,7 @@ We already did this so lets go:
 
 .. code-block:: xslt
 
-   <xsl:value-of select="php:functionString('\ADWLM\CobjXslt\ContentObject\XsltContentObject::typoscriptObjectPath', 'lib.link', link)" disable-output-escaping="yes"/>
+   <xsl:value-of select="php:functionString('\Digicademy\CobjXslt\ContentObject\XsltContentObject::typoscriptObjectPath', 'lib.link', link)" disable-output-escaping="yes"/>
 
 Instead of calling standard PHP core functions, we can also call
 static functions from our classes. TyposcriptObjectPath is called

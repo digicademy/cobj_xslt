@@ -1,17 +1,18 @@
 <?php
 
-namespace ADWLM\CobjXslt\ContentObject;
+namespace Digicademy\CobjXslt\ContentObject;
 
 /***************************************************************
  *  Copyright notice
  *
- *  Copyright (c) 2017 Torsten Schrade <Torsten.Schrade@adwmainz.de>
+ *  Torsten Schrade <Torsten.Schrade@adwmainz.de>, Academy of Sciences and Literature | Mainz
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
  *  free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
+ *  the Free Software Foundation; either version 3 of the License, or
  *  (at your option) any later version.
  *
  *  The GNU General Public License can be found at
@@ -278,7 +279,7 @@ class XsltContentObject
 
     /**
      * Static wrapper function for calling TypoScript cObjects from XSL stylesheets, e.g. by doing
-     * <xsl:value-of select="php:functionString('\ADWLM\CobjXslt\ContentObject\XsltContentObject::typoscriptObjectPath', 'lib.my.object', YOUR XPATH)"/>
+     * <xsl:value-of select="php:functionString('\Digicademy\CobjXslt\ContentObject\XsltContentObject::typoscriptObjectPath', 'lib.my.object', YOUR XPATH)"/>
      * registerPHPfunctions must be set in the configuration of the cObj for this to work
      *
      * @param string $key  The setup key to be applied from the global TypoScript scope
