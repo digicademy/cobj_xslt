@@ -1,5 +1,7 @@
 # XSLT Content Object
 
+[![DOI](https://zenodo.org/badge/62417256.svg)](https://zenodo.org/badge/latestdoi/62417256)
+
 ## About
 
 This TYPO3 extension adds a new content object XSLT to the standard TypoScript cObjects. With the XSLT cObject you can retrieve and transform XML data with pure TypoScript and XSL stylesheets. The data can be fetched from database fields, files or external resources.
