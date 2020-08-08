@@ -3,14 +3,12 @@
     "type": "typo3-cms-extension",
     "description": "Extends TYPO3 with a new content object XSLT for flexible XML transformations",
     "homepage": "http://www.adwmainz.de/",
-    "authors": [
-        {
-          "name": "Torsten Schrade",
-          "email": "Torsten.Schrade@adwmainz.de",
-          "role": "Developer",
-          "homepage": "http://www.adwmainz.de"
-        }
-    ],
+    "authors": [{
+        "name": "Torsten Schrade",
+        "email": "Torsten.Schrade@adwmainz.de",
+        "role": "Developer",
+        "homepage": "http://www.adwmainz.de"
+    }],
     "license": ["GPL-2.0+"],
     "keywords": ["TYPO3", "XML", "XSLT", "Digital Humanities"],
     "support": {
@@ -18,7 +16,7 @@
     },
     "version": "1.9.0",
     "require": {
-        "typo3/cms-core": ">=8.7.0 || <=9.5.99",
+        "typo3/cms-core": ">=8.7.0 || <=10.4.99",
         "ext-libxml": "*",
         "ext-json": "*",
         "ext-simplexml": "*",
@@ -31,7 +29,7 @@
     },
     "autoload": {
         "psr-4": {
-          "Digicademy\\CobjXslt\\": "Classes/"
+            "Digicademy\\CobjXslt\\": "Classes/"
         }
     },
     "extra": {
