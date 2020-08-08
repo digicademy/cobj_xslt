@@ -14,9 +14,9 @@ Requirements
 
 - You need the PHP extensions libxml, SimpleXML, dom and xsl
 
-- Supported TYPO3 versions: 8.7 – 9.5
+- Supported TYPO3 versions: 9.5 – 10.4
 
 Installation
 ^^^^^^^^^^^^
 
-Simply import it from TER and install. Nothing else needs to be done.
+Simply import it with composer or from TER and install. Nothing else needs to be done.
