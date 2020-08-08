@@ -27,7 +27,7 @@ XSLT Content Object
 		XML, XSLT
 
 	:Copyright:
-		2012-2019
+		2012-2020
 
 	:Author:
 		Torsten Schrade

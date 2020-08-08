@@ -25,13 +25,13 @@ in the system. You can also use it in a news record or an address element for ex
 
 .. attention::
 
-   TYPO3 7.6 and 8.7 use different rich text editors (rtehtmlarea and ckeditor).
+   TYPO3 7.6 and 8.7-10.4 use different rich text editors (rtehtmlarea and ckeditor).
    The configuration therefore depends on your TYPO3 version and the RTE you use. The
    tutorial will first discuss the general setup of the TypoTag and then show the
    respective configurations for the two RTEs.
 
-Configuration for a simple input field (TYPO3 7.6 and 8.7)
-----------------------------------------------------------
+Configuration for a simple input field (TYPO3 7.6 and 8.7-10.4)
+---------------------------------------------------------------
 
 The configuration for a simple input field without RTE works the same for both TYPO3 versions
 and is also the basis for the integration of the TypoTag into the respective RTE.
@@ -146,8 +146,8 @@ This is the PageTSconfig for achieving the user element:
 Notice: Its not possible to set attributes with a user element. Therefore you will
 have to set a fixed XSL stylesheet for each <xslt> user element you define.
 
-Configuration for ckeditor (TYPO3 8.7)
---------------------------------------
+Configuration for ckeditor (TYPO3 8.7-10.4)
+-------------------------------------------
 
 From this version onwards CKEditor is the new default RTE. Note that you can still use rtehtmlarea in TYPO3 8.7
 but it is now a separate extension in TER. The integration of the <xslt> TypoTag into CKEditor is fully backwards

@@ -11,6 +11,11 @@ Reference
 
 This section gives an overview on all TypoScript properties of the XSLT content object.
 
+.. important::
+
+   In TYPO3 10.4 the FILE TypoScript object was removed. You can use a FLUIDTEMPLATE
+   cObject instead. In respect to TYPO3 9.5 the deprecated FILE cObject is still supported.
+
 .. container:: table-row
 
    Property
@@ -21,7 +26,7 @@ This section gives an overview on all TypoScript properties of the XSLT content 
 
    Description
          This fetches the XML data from a source. Can be an XML string, a field
-         in the database containing XML, a file (path or via TypoScript FILE
+         in the database containing XML, a file (path or FLUIDTEMPLATE
          cObject) or an external resource.
 
          **Example (field):** ::
@@ -35,18 +40,17 @@ This section gives an overview on all TypoScript properties of the XSLT content 
          Fetches the XML from the field 'my\_xml\_field' of the current page
          record.
 
-         **Example (stdWrap / FILE):** ::
+         **Example (stdWrap / FLUIDTEMPLATE):** ::
 
             page.10 = XSLT
             page.10 {
-               source.cObject = FILE
+               source.cObject = FLUIDTEMPLATE
                source.cObject.file = fileadmin/myfile.xml
                [...]
             }
 
-         This fetches the XML from a file included with TypoScript's FILE
-         content object. Please note: Due to FILE's internal settings, the data
-         can't be larger than 1024kb. See TSref.
+         This fetches the XML from a file included with TypoScript's FLUIDTEMPLATE
+         content object.
 
          **Example (external):** ::
 
@@ -126,7 +130,7 @@ This section gives an overview on all TypoScript properties of the XSLT content 
          **Example (stdWrap):** ::
 
             transformations.1 {
-               stylesheet.cObject = FILE
+               stylesheet.cObject = FLUIDTEMPLATE
                stylesheet.cObject.file = fileadmin/my.xsl
                [...]
             }
