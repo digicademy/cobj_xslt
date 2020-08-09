@@ -69,11 +69,11 @@ transformations we would like the data to go through. Just as in
 TypoScript, the second level of this array is associative. The keys
 reflect the according TypoScript properties.
 
-   .. attention::
+.. attention::
 
-      From TYPO3 version 8.7 onwards you must wrap the view helper output in <f:format.raw> tags.
+  Starting with TYPO3 version 8.7 you must wrap the view helper output in <f:format.raw> tags.
 
-You can only use the above five properties in the XSLT view helper.
+You can use the following five properties in the XSLT view helper:
 
 +----------------------+---------------------------------------------------------------+
 | property             | description                                                   |

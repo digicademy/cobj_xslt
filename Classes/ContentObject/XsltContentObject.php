@@ -33,12 +33,14 @@ use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Core\TypoScript\Parser\TypoScriptParser;
 use TYPO3\CMS\Core\TimeTracker\TimeTracker;
 use TYPO3\CMS\Core\Utility\VersionNumberUtility;
+use TYPO3\CMS\Frontend\ContentObject\AbstractContentObject;
+
 
 if (!defined('TYPO3_MODE')) {
     die('Access denied.');
 }
 
-class XsltContentObject
+class XsltContentObject extends AbstractContentObject
 {
 
     /**
@@ -59,18 +61,14 @@ class XsltContentObject
     /**
      * Renders the XSLT content object
      *
-     * @param string $name  XSLT
-     * @param array  $conf  TypoScript configuration of the cObj
-     * @param string $TSKey Key in the TypoScript array passed to this function
-     * @param object $oCObj Reference to the parent class
+     * @param array $conf TypoScript configuration of the cObj
      *
      * @return string The transformed XML string
      *
      */
-    public function cObjGetSingleExt($name, array $conf, $TSkey, ContentObjectRenderer &$oCObj)
+    public function render($conf = [])
     {
         $content = '';
-        $this->cObj = $oCObj;
 
         // TimeTracker object is gone in TYPO3 8 but needed to set TS log messages; instantiate in versions >= 8.7
         if (VersionNumberUtility::convertVersionNumberToInteger(TYPO3_branch) >= 8007000 && !is_object($GLOBALS['TT'])) {

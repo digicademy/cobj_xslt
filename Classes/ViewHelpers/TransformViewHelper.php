@@ -26,7 +26,7 @@ namespace Digicademy\CobjXslt\ViewHelpers;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 
 /**
@@ -109,7 +109,6 @@ class TransformViewHelper extends AbstractViewHelper
             }
             $configuration['source'] = trim($source);
             $content = $this->contentObject->cObjGetSingle('XSLT', $configuration, '');
-
         }
 
         return $content;

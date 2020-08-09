@@ -19,12 +19,12 @@ $EM_CONF[$_EXTKEY] = array(
     'clearCacheOnLoad' => 1,
     'lockType' => '',
     'author_company' => 'Academy of Sciences and Literature | Mainz',
-    'version' => '1.9.0',
+    'version' => '1.10.0',
     'CGLcompliance' => '',
     'CGLcompliance_note' => '',
     'constraints' => array(
         'depends' => array(
-            'typo3' => '8.7.0-9.5.99',
+            'typo3' => '9.5.0-10.4.99',
         ),
         'conflicts' => array(),
         'suggests' => array(

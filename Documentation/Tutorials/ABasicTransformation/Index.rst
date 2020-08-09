@@ -64,12 +64,12 @@ configured below the  **transformation.** property. We proceed:
    page.10 = XSLT
    page.10 {
        source = fileadmin/collection.xml
-           transformations {
-                   1 {
-                           stylesheet = fileadmin/collection.xsl
-                   }
+       transformations {
+           1 {
+                stylesheet = fileadmin/collection.xsl
            }
-           stdWrap.wrap = <div id=”cd-collection”> | </div>
+       }
+       stdWrap.wrap = <div id=”cd-collection”> | </div>
    }
 
 The stylesheet subproperty fetches the XSL styles from the specified
@@ -115,15 +115,15 @@ with stdWrap:
    page.10 = XSLT
    page.10 {
       source = fileadmin/collection.xml
-           transformations {
-                   1 {
-                           stylesheet = fileadmin/collection.xsl
-                           setParameters {
-                                   pagetitle.value.data = page : title
-                           }
-                   }
-           }
-           stdWrap.wrap = <div id=”cd-collection”> | </div>
+      transformations {
+          1 {
+              stylesheet = fileadmin/collection.xsl
+              setParameters {
+                   pagetitle.value.data = page : title
+              }
+          }
+      }
+      stdWrap.wrap = <div id=”cd-collection”> | </div>
    }
 
 Output:
