@@ -12,7 +12,7 @@
 .. important::
 
    TYPO3 versions lower than 7.6.20 and 8.7.3 contain a bug that prevents the functionality
-   described in this tutorial from working. Please make sure you use the above versions (or higher)
+   described in this tutorial from working. Please make sure that you use the correct versions
    if you want to implement the TypoTag functionality.
 
 From a developers point of view using the XSLT content object in a

@@ -109,7 +109,6 @@ class TransformViewHelper extends AbstractViewHelper
             }
             $configuration['source'] = trim($source);
             $content = $this->contentObject->cObjGetSingle('XSLT', $configuration, '');
-
         }
 
         return $content;

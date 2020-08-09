@@ -11,7 +11,7 @@ Reference
 
 This section gives an overview on all TypoScript properties of the XSLT content object.
 
-.. important::
+.. attention::
 
    In TYPO3 10.4 the FILE TypoScript object was removed. You can use a FLUIDTEMPLATE
    cObject instead. In respect to TYPO3 9.5 the deprecated FILE cObject is still supported.
@@ -413,4 +413,3 @@ Next is an example for all TS configuration options with their according data ty
 
       stdWrap [stdWrap to the whole object]
    }
-
