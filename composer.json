@@ -29,5 +29,10 @@
         "psr-4": {
             "Digicademy\\CobjXslt\\": "Classes/"
         }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "cobj_xslt"
+        }
     }
 }
